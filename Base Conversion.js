@@ -11,11 +11,11 @@ let Alphabet = {
 
 
 let number = 15;
-let answer = "";
 
 
 const convert = (input, sourse, target) => {
   let number = 0;
+  let answer = "";
   if (sourse === Alphabet.DECIMAL) {
     number = input;
   }
