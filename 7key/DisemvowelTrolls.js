@@ -5,4 +5,4 @@ const disemvowel = (str) => {
   return str.split('').filter(e => !vowel.includes(e.toLowerCase())).join('');
 }
 
-console.log(disemvowel(`LoX'EBANNIY`));
+console.log(disemvowel(`Somebody to you`));
