@@ -1,12 +1,11 @@
-Array.prototype.map = function (func, thisArg = this) {
-  newArr = [];
+Array.prototype.map = function (func, thisArg) {
+  var newArr = [];
   newArr.length = this.length;
 
-  for (let index = 0; index < this.length; index++) {
-    if (isNaN(Number(this[index]))) continue;
-    newArr[index](func.call(thisArg, this[index], index, this));
+  for (var item in this) {
+    if (isNaN(Number(item))) continue;
+    newArr[item] = func.call(thisArg, this[item], Number(item), this);
   }
-
   return newArr;
 };
 
