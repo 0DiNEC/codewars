@@ -4,7 +4,7 @@ function deepCount(arr, c = 0) {
   for (const element of arr) {
     const e = element;
     const len = e.length ? e.length : 1;
-    count += Array.isArray(e) ? deepCount(e, 1) : len;
+    count += Array.isArray(e) ? deepCount(e, 1) : 0;
   }
   
   return count;
