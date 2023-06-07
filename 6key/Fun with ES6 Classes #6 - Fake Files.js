@@ -1,6 +1,9 @@
 class File {
   constructor (fullName, contents) {
     const _fullName = fullName;
+    this.contents = contents;
+    this.lineCursorPos = 0;
+    this.cursorPos = 0;
     Object.defineProperties(this, {
       fullName: {
         value: _fullName,
@@ -16,9 +19,32 @@ class File {
       }
     })
   }
+
+  getContents () {
+    return this.contents;
+  }
+
+  write (content) {
+    this.contents = `${this.contents.length ? this.contents+'\n':''}${content}`;
+  }
+
+  gets () {
+    return this.contents.split('\n')[this.lineCursorPos++];
+  }
+
+  getc() {
+    return this.contents.split('')[this.cursorPos++];
+  }
 }
 
-var fileWithComplexName = new File("alpha.beta.gamma.delta.txt", "alpha beta gamma delta");
-console.log(fileWithComplexName.extension); // "txt"
-fileWithComplexName.extension = "js"; // Reassignment should fail
-console.log(fileWithComplexName.extension); // still "txt"
+var myFile = new File("Lorem Ipsum.txt", "Lorem ipsum dolor sit amet, adispicing eu.");
+console.log(myFile.getc()); // "L"
+console.log(myFile.getc()); // "o"
+console.log(myFile.getc()); // "r"
+console.log(myFile.getc()); // "e"
+console.log(myFile.getc()); // "m"
+console.log(myFile.getc()); // " "
+console.log(myFile.getc()); // "i"
+console.log(myFile.getc()); // "p"
+// ... (many calls to myFile.getc())
+console.log(myFile.getc()); // undefined (when number of calls exceeds character count)
