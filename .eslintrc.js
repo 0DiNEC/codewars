@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2021: true
   },
   overrides: [],
   parserOptions: {
@@ -10,5 +10,5 @@ module.exports = {
   },
   rules: {
     semi: 0
-  },
+  }
 };
