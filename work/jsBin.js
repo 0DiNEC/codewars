@@ -1,4 +1,5 @@
-function numberCompose(digitArr, searchNumber) {
+function sostavChisla(digitArr, searchNumber) {
+  digitArr = digitArr.sort((a, b) => a - b);
   const result = [];
 
   const nextDigit = (curVal, index, setDigitArr) => {
@@ -7,12 +8,11 @@ function numberCompose(digitArr, searchNumber) {
       const value = curVal + digitArr[index];
       if (value === searchNumber) {
         result.push([...setDigitArr, digitArr[index]])
-        return true;
+        return;
       }
       if (value < searchNumber) {
         setDigitArr.push(digitArr[index]);
-        if (nextDigit(value, index + 1, setDigitArr))
-          return true;
+        nextDigit(value, index + 1, setDigitArr)
         break;
       }
       if (value > searchNumber)
@@ -20,14 +20,12 @@ function numberCompose(digitArr, searchNumber) {
     }
     if (index < digitArr.length)
       nextDigit(curVal, index + 1, copyArr);
-
-    return false;
   }
   for (let i = 0; i < digitArr.length; i++) {
     const curVal = digitArr[i];
     if (curVal > searchNumber) continue;
     if (curVal === searchNumber) {
-      result.push(curVal);
+      result.push([curVal]);
       continue;
     }
 
@@ -35,9 +33,9 @@ function numberCompose(digitArr, searchNumber) {
     nextDigit(curVal, i + 1, setDigitArr);
   }
 
-  result.forEach(item => console.log(item))
+  //result.forEach(item => console.log(item))
 
   return result;
 }
 
-numberCompose([1, 2, 3, 4, 5, 6, 7, 8], 8)
+//sostavChisla([7, 8, 3, 4, 5, 6, 1, 2], 15)
