@@ -17,11 +17,8 @@ for (const key in items) {
 console.log('Object keys');
 const courses = {
   java: 10,
-
   javascript: 55,
-
   nodejs: 5,
-
   php: 15,
 };
 
