@@ -1,17 +1,15 @@
 // Static Methods
 
-// class Animal {
-//   static Say() {
-//     console.log('meaw');
-//   }
-// }
-
-// Animal.Go = function() {
-//   console.log('goooo');
-// }
-
-// Animal.Say();
-// Animal.Go();
+class Animal {
+  static Say() {
+    console.log('meaw');
+  }
+}
+Animal.Go = function() {
+  console.log('goooo');
+}
+ Animal.Say();
+ Animal.Go();
 
 /// ----------------------------------------------------------------
 
