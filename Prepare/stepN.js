@@ -1,20 +1,23 @@
 class User {
-  constructor
-  #password = '123';
-  age = 23;
-  static gender = 'man';
+  #password;
+  age;
+  gender;
+
+  constructor(...props) {
+    this.#password = props.password;
+    this.age = props.age;
+    this.gender = props.gender;
+  }
 
   output() {
-   console.log(this.#password) 
-   console.log(this.age) 
+    console.log(this.#password);
+    console.log(this.age);
   }
 }
-class Person extends User {
-
-}
+class Person extends User {}
 
 const user = new User();
 const person = new Person();
 
-console.log(person.password)
-person.output()
+console.log(person.password);
+person.output();
