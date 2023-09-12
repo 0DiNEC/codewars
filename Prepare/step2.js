@@ -29,23 +29,4 @@ const keys = Object.keys(courses);
 
 keys.forEach((key) => console.log(`${key}: ${courses[key]}`));
 
-// Object.values
-console.log('Object.values');
-const animals = {
-  tiger: 1,
-
-  cat: 2,
-
-  monkey: 3,
-
-  elephant: 4
-};
-
-Object.values(animals).forEach((val) => console.log(val))
-
-//Object.entries()
-console.log('Object.entries()');
-
-const entries = Object.entries(animals);
-console.log(entries)
 
