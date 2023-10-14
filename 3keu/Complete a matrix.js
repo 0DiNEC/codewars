@@ -9,18 +9,16 @@
 // [ 7,12, 2]
 
 function completeMatrix(matrix) {
-  const nullArrPosition = {
-    positions: [
+  nullPositions = [
     /*{
       row: 
       col:
     }*/
-    ],
-  };
+  ]
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
       if (matrix[i][j] === null)
-        nullArrPosition.positions.push({ row: i, col: j });
+        nullPositions.push({ row: i, col: j });
     }
   }
   
