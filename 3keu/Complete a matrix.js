@@ -19,6 +19,7 @@ function completeMatrix(matrix) {
     for (let j = 0; j < matrix[i].length; j++) {
       if (matrix[i][j] === null)
         nullPositions.push({ row: i, col: j });
+        matrix[i][j] = 0;
     }
   }
   
