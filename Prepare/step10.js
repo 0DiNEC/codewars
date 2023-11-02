@@ -10,3 +10,4 @@ const add = function (a) {
 const result = add(5)(9);
 
 console.log(result());
+
