@@ -1,4 +1,3 @@
-
 // Первая бомба
 Bomb.diffuse(Bomb.key);
 
