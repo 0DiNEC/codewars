@@ -16,5 +16,6 @@
 // !+[]+[]+![] -- truefalse
 // new Date(0) - 0 -- 0
 // new Date(0) + 0
+///|| 
 
-console.log(!+[]+[]+![]);
+console.log([] == ![]);
