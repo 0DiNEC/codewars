@@ -5,6 +5,9 @@
 // Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
 
 // i.e.
+const isFriend = (item) => item.length === 4;
 function friend(friends){
-  //your code here
+  return friends.filter(isFriend);
 }
+
+console.log(friend(["Ryan", "Kieran", "Jason", "Yous"]));
