@@ -38,13 +38,10 @@ function maxSum(arr, ranges) {
     const endPos = range[1];
     const replaceValue = range[2];
 
-    let curResult = replaceValue;
-    for (let i = startPos + 1; i <= endPos; i++) {
-      const element = arr[i];
-      curResult += element;
-    }
-    if (!result) result = curResult;
-    if (result < curResult) result = curResult;
+    const curResult = arr
+      .slice(startPos + 1, endPos + 1)
+      .reduce((sum, element) => sum + element, replaceValue);
+    result = result === null ? curResult : Math.max(result, curResult);
     arr[startPos] = replaceValue;
   }
   return result;
